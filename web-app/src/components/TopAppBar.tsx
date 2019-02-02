@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
-import { Link } from 'react-router-dom';
+
+import Image from 'react-bootstrap/Image';
+
+import './Image.css';
+import {Link} from "react-router-dom";
+
 class TopAppBar extends Component<any, any> {
   render() {
     const { classes } = this.props;
@@ -24,6 +29,7 @@ class TopAppBar extends Component<any, any> {
           <FormControl type="text" placeholder="Search" className="mr-sm-2" />
           <Button variant="outline-success">Search</Button>
         </Form>
+        <Image className="Image" src="temp.png" ></Image>
       </NavbarCollapse>
     </Navbar>;
   }
