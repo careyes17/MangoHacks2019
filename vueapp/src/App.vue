@@ -16,10 +16,11 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from 'vue';
-import AppToolbar from './components/AppToolbar'
-import AppDrawer from './components/AppDrawer'
+import AppToolbar from './components/AppToolbar.vue'
+import AppDrawer from './components/AppDrawer.vue'
+import {onLogin} from './vue-apollo'
 
 export default Vue.extend({
   name: 'App',
@@ -31,6 +32,10 @@ export default Vue.extend({
     return {
       //
     }
+  },
+  async mounted() {
+    const apolloClient = this.$apollo.provider.defaultClient;
+    await onLogin(apolloClient, {})
   }
 })
 </script>

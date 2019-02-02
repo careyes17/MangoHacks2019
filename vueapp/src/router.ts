@@ -29,32 +29,32 @@ export default new Router({
     {
       path: '/prescriptions',
       name: 'Prescriptions',
-      component: PrescriptionsVue
+      component: PrescriptionsVue,
     },
     {
       path: '/messages',
       name: 'Messages',
-      component: MessagesVue
+      component: MessagesVue,
     },
     {
       path: '/events',
       name: 'Event Log',
-      component: EventLogVue
+      component: EventLogVue,
     },
     {
       path: '/integration',
       name: 'Integrations',
-      component: IntegrationsVue
+      component: IntegrationsVue,
     },
     {
       path: '/music',
       name: 'Music',
-      component: MusicVue
+      component: MusicVue,
     },
     {
       path: '/contact',
       name: 'Contact Information',
-      component: ContactInfoVue
+      component: ContactInfoVue,
     },
   ],
 });
