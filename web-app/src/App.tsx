@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import TopAppBar from './components/TopAppBar';
 import {Container, Row, Col} from 'react-bootstrap';
+import {BrowserRouter, Route, Link} from 'react-router-dom';
 
 
 import './App.css';
@@ -12,6 +13,7 @@ class App extends Component<any, any> {
     const {classes} = this.props;
 
     return (
+      <BrowserRouter>
         <Container fluid={true} className="App">
             <TopAppBar></TopAppBar>
           <Row>
@@ -19,6 +21,7 @@ class App extends Component<any, any> {
            <Col></Col>
           </Row>
         </Container>
+      </BrowserRouter>  
     );
   }
 }
