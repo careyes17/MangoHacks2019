@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import TopAppBar from './components/TopAppBar';
+import {Container, Row, Col} from 'react-bootstrap';
+
 
 import './App.css';
+import AppDrawer from './components/AppDrawer';
 
 
 class App extends Component<any, any> {
@@ -9,9 +12,12 @@ class App extends Component<any, any> {
     const {classes} = this.props;
 
     return (
-      <div className="App">
-        <TopAppBar></TopAppBar>
-      </div>
+        <Container fluid={true} className="App">
+            <TopAppBar></TopAppBar>
+          <Row>
+           <AppDrawer></AppDrawer>
+          </Row>
+        </Container>
     );
   }
 }
