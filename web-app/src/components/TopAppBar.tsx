@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
 import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
+import { Link } from 'react-router-dom';
 class TopAppBar extends Component<any, any> {
   render() {
     const { classes } = this.props;
     return <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+      <Navbar.Brand><Link to="/">React-Bootstrap</Link></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <NavbarCollapse>
         <Nav className="mr-auto">
