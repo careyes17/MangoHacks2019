@@ -1,15 +1,19 @@
 <template>
-  <v-app>
+  <v-app id="appRoot">
     <AppToolbar />            
 
     <v-content>
       <v-layout row wrap>
-        <v-flex xs4>
+        <v-flex xs2>
           <AppDrawer />
         </v-flex>
 
         <v-flex>
           <router-view></router-view>
+        </v-flex>
+
+        <v-flex xs2>
+          <PatientSideInfo></PatientSideInfo>
         </v-flex>
       </v-layout>
     </v-content>
@@ -20,6 +24,7 @@
 import Vue from 'vue';
 import AppToolbar from './components/AppToolbar.vue'
 import AppDrawer from './components/AppDrawer.vue'
+import PatientSideInfo from './components/PatientSideInfo.vue'
 import {onLogin} from './vue-apollo'
 
 export default Vue.extend({
@@ -27,6 +32,7 @@ export default Vue.extend({
   components: {
     AppToolbar,
     AppDrawer,
+    PatientSideInfo
   },
   data () {
     return {
@@ -39,3 +45,12 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+  #appRoot {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+</style>
+

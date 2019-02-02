@@ -1,0 +1,23 @@
+{
+  patientsList{
+    items{
+    	firstName
+    	lastName
+    	age
+    	careGiver{
+      	firstName
+      	lastName
+    	}
+    	events
+    	medicationList{
+      items{
+      	drugName
+        drugDosage
+        drugFrequency
+        drugLastAdmin
+        drugEffectiveDuration
+        }
+      }
+    }
+  }
+}
