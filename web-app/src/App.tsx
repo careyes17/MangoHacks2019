@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
-import Button from '@material-ui/core/Button';
+import TopAppBar from './components/TopAppBar';
 
-class App extends Component {
+import './App.css';
+
+
+class App extends Component<any, any> {
   render() {
+    const {classes} = this.props;
+
     return (
       <div className="App">
-        <Button variant="contained" color="primary">Hello Button!</Button>
+        <TopAppBar></TopAppBar>
       </div>
     );
   }
