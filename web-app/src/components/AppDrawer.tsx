@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import {ListGroup} from 'react-bootstrap';
 
+import '../styles/AppDrawer.css';
+
 interface ListItem {
   name: string,
   route: string,
@@ -18,7 +20,7 @@ class AppDrawer extends Component {
   ]
   render() {
     return (
-      <ListGroup variant="flush">
+      <ListGroup variant="flush" className="listRoot">
         {this.items.map(option => 
         <ListGroup.Item>
           <Link to={option.route}>{option.name}</Link>
