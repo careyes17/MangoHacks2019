@@ -7,6 +7,10 @@
         <v-flex xs4>
           <AppDrawer />
         </v-flex>
+
+        <v-flex>
+          <router-view></router-view>
+        </v-flex>
       </v-layout>
     </v-content>
   </v-app>
