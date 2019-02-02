@@ -15,7 +15,8 @@ class App extends Component<any, any> {
         <Container fluid={true} className="App">
             <TopAppBar></TopAppBar>
           <Row>
-           <AppDrawer></AppDrawer>
+           <Col xs="4"><AppDrawer /></Col>
+           <Col></Col>
           </Row>
         </Container>
     );
