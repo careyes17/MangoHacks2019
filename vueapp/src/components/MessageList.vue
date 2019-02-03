@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <v-form ref="form">
+  <div @keydown.up="offset == 0 ? null: scrollUp()" @keydown.down="items.length >= 3 ? offset == items.length - 3 ? null: scrollDown(): null">
+    <v-form ref="form" @submit="submit">
       <v-container>
         <v-layout align-end justify-center row wrap>
           <v-flex>
@@ -17,8 +17,7 @@
               v-model="text1"
               type="text"
               block="false"
-              v-on:submit.prevent="!text1=='' ? addItems(text1):null"
-            ></v-text-field>
+              @submit="submit" />
           </v-flex>
           <v-flex xs1 sm1 md1>
             <v-btn v-on:click="offset == 0 ? null: scrollUp()">&uarr;</v-btn>
@@ -80,6 +79,12 @@ export default {
     },
     scrollDown () {
       this.offset++
+    },
+    submit (e) {
+      e.preventDefault()
+      if (this.text1 !== '') {
+        this.addItems(this.text1)
+      }
     }
   }
 }

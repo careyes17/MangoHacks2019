@@ -14,38 +14,74 @@ query allPatientEvents {
     	events
     }
   }
-}`
+}`;
 
-const allPatients =  gql`
+const allPatientsMed = gql`
 {
-  patientsList{
-    items{
-      firstName
-      lastName
-      age
-      careGiver{
+    allPatientsMed: patientsList {
+      items {
         firstName
         lastName
-      }
-      events
-      medicationList{
-      items{
-        drugName
-        drugDosage
-        drugFrequency
-      drugLastAdmin
-      drugEffectiveDuration
+        age
+        medicationList {
+        items {
+          drugName
+          drugDosage
+          drugFrequency
+        drugLastAdmin
+        drugEffectiveDuration
+        }
       }
     }
   }
-}
-}`
+}`;
+
+const allPatients =  gql`
+  {
+    patientsList{
+      items{
+        firstName
+        lastName
+        age
+        careGiver{
+          firstName
+          lastName
+        }
+        events
+        medicationList{
+          items{
+            drugName
+            drugDosage
+            drugFrequency
+            drugLastAdmin
+            drugEffectiveDuration
+          }
+      }
+    }
+  }
+}`;
+
+const patientMedicationInformation = gql`
+  query ($patientId: ID){
+    patientMedInfo: patient(id: $patientId) {
+      firstName
+      medicationList{
+        items{
+          drugName
+          drugDosage
+          drugFrequency
+          drugLastAdmin
+          drugEffectiveDuration
+        }
+      }
+    }
+  }`;
 
 const queries = {
   patientsList: allPatients,
   allPatientEvents: allPatientEvents,
-
-
+  patientMedInfo: patientMedicationInformation,
+  allPatientsMed: allPatientsMed
 };
 
 

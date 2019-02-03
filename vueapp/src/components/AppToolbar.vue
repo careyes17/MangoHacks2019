@@ -1,7 +1,7 @@
 <template>
   <v-toolbar app>
-    <v-toolbar-title class="headline text-uppercase">
-      <span>PatientSafe</span>
+    <v-toolbar-title class="headline">
+      <span>BetterCare</span>
       <!-- <span class="font-weight-light">MATERIAL DESIGN</span> -->
     </v-toolbar-title>
     <v-spacer></v-spacer>

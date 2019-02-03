@@ -4,6 +4,7 @@ import './plugins/vuetify'
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import VueTimeago from 'vue-timeago';
 import { createProvider } from './vue-apollo';
 import queries from './apolloQueries';
 
@@ -16,5 +17,11 @@ const vue = new Vue({
   apollo: queries,
   render: (h) => h(App)
 }).$mount('#app');
+
+Vue.use(VueTimeago, {
+  name: 'Timeago', // Component name, `Timeago` by default
+  locale: 'en', // Default locale
+  }
+)
 
 export default vue;
