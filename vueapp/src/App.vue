@@ -4,7 +4,7 @@
 
     <v-content>
       <v-layout row wrap>
-        <v-flex xs2>
+        <v-flex xs2 sm2>
           <AppDrawer />
         </v-flex>
 
@@ -12,7 +12,7 @@
           <router-view></router-view>
         </v-flex>
 
-        <v-flex xs2>
+        <v-flex xs2 sm2>
           <PatientSideInfo></PatientSideInfo>
         </v-flex>
       </v-layout>
