@@ -9,3 +9,7 @@ export interface LeanPatient {
   lastName: string;
   age: number;
 }
+
+export interface PatientEvent {
+  
+}

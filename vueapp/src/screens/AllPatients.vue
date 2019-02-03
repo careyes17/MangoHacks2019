@@ -38,6 +38,9 @@ export default Vue.extend({
   },
   watch: {
   },
+  mounted() {
+    this.getAllPatients();
+  },
   methods: {
     ...mapActions('allPatients', ['getAllPatients']),
     ...mapMutations('allPatients', ['updateCurrentPatient']),
