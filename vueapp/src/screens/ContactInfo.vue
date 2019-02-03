@@ -25,20 +25,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 
 export default Vue.extend({
   data() {
     return {
 
-    }
+    };
   },
   methods: {
     newData(data: any) {
       console.log(data);
     }
-  }
-})
+  ,}
+});
 </script>
 
 <style lang="scss">

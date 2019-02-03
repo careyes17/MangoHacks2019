@@ -32,7 +32,7 @@ import Vue from 'vue';
 import apolloQueries from '../apolloQueries'
 
 export default Vue.extend({
-  name: "AppToolbar",
+  name: 'AppToolbar',
   data() {
     return {
       mostRecentEventQuery: apolloQueries.mostRecentEvent

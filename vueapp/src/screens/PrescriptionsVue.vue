@@ -33,7 +33,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 import moment from 'moment';
 
 import { mapState, mapGetters, mapActions } from 'vuex';
@@ -42,7 +42,7 @@ export default Vue.extend({
   },
   computed: {
     ...mapState('prescriptions', ['patients']),
-    ...mapGetters('prescriptions', ['viewPrescriptionInfo'])
+    ...mapGetters('prescriptions', ['viewPrescriptionInfo'],)
   },
   methods: {
     ...mapActions('prescriptions', ['loadPrescriptions']),
@@ -54,7 +54,7 @@ export default Vue.extend({
   mounted() {
     this.loadPrescriptions();
   }
-})
+});
 </script>
 
 <style lang="scss">

@@ -28,20 +28,20 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from 'vue';
 import {mapState, mapActions, mapGetters} from 'vuex';
 export default Vue.extend({
   computed: {
     ...mapState('eventLogs', ['patients']),
-    ...mapGetters('eventLogs', ['viewFriendlyPatients'])
+    ...mapGetters('eventLogs', ['viewFriendlyPatients'],)
   },
   methods: {
-    ...mapActions('eventLogs', ['loadEvents'])
+    ...mapActions('eventLogs', ['loadEvents'],)
   },
   mounted() {
     this.loadEvents();
   }
-})
+});
 </script>
 
 <style lang="scss">

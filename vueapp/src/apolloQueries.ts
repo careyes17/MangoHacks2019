@@ -78,7 +78,7 @@ const patientMedicationInformation = gql`
   }`;
 
 const mostRecentEvent = gql`
-query mostRecentEvent { 
+query mostRecentEvent {
   mostRecentEvent: patientsList {
     items {
       firstName
@@ -95,10 +95,10 @@ query mostRecentEvent {
 
 const queries = {
   patientsList: allPatients,
-  allPatientEvents: allPatientEvents,
+  allPatientEvents,
   patientMedInfo: patientMedicationInformation,
-  allPatientsMed: allPatientsMed,
-  mostRecentEvent: mostRecentEvent
+  allPatientsMed,
+  mostRecentEvent,
 };
 
 

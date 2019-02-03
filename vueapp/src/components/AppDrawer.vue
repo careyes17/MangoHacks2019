@@ -14,25 +14,25 @@
 </template>
 
 <script lang="ts">
-import {ListItem} from '../types'
+import {ListItem} from '../types';
 
 import Vue from 'vue';
-  const items: ListItem[] = [
-    {name: "Patients", route: '/patients'},
-    {name: "Prescriptions", route: '/prescriptions'},
-    {name: "Messages", route: '/messages'},
-    {name: "Event Log", route: '/events'},
-    {name: "Google Home", route: '/integration'},
-    {name: "Music", route: '/music'},
-    {name: "Contact Information", route: '/contact'}
-  ]
+const items: ListItem[] = [
+    {name:'Patients', route: '/patients'},
+    {name:'Prescriptions', route: '/prescriptions'},
+    {name:'Messages', route: '/messages'},
+    {name:'Event Log', route: '/events'},
+    {name:'Google Home', route: '/integration'},
+    {name:'Music', route: '/music'},
+    {name:'Contact Information', route: '/contact'}
+  ];
 export default Vue.extend({
   data() {
     return {
       items
-    }
+    };
   }
-})
+  });
 </script>
 
 <style scoped>

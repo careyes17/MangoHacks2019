@@ -38,9 +38,9 @@ export default Vue.extend({
     events: Array
   },
   methods: {
-    
+
     careGiverToString(data: {firstName: string, lastName: String}) {
-      return `${data.firstName} ${data.lastName}`
+      return `${data.firstName} ${data.lastName}`;
     }
   }
 })

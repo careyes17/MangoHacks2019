@@ -8,7 +8,7 @@ import EventLogVue from './screens/EventLogVue.vue';
 import IntegrationsVue from './screens/IntegrationsVue.vue';
 import MusicVue from './screens/MusicVue.vue';
 import ContactInfoVue from './screens/ContactInfo.vue';
-import AllPatients from './screens/AllPatients.vue'
+import AllPatients from './screens/AllPatients.vue';
 
 Vue.use(Router);
 

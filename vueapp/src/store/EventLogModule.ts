@@ -4,43 +4,43 @@ import store from '@/store';
 import Vue from '@/main';
 
 interface PatientWithEvents extends LeanPatient {
-  events: PatientEvent[]
+  events: PatientEvent[];
 }
 
 interface EventLogState {
-  patients: PatientWithEvents[]
+  patients: PatientWithEvents[];
 }
 
 const EventLogModule: Module<EventLogState, any> = {
   state: {
-    patients: []
+    patients: [],
   },
   getters: {
     viewFriendlyPatients(state) {
-      const result: Array<{header?: string} | {events: PatientEvent[], patient: PatientWithEvents}> = []
-      state.patients.forEach(patient => {
+      const result: Array<{header?: string} | {events: PatientEvent[], patient: PatientWithEvents}> = [];
+      state.patients.forEach((patient) => {
         result.push({
           header: `${patient.firstName} ${patient.lastName}`,
-          patient
+          patient,
       });
         result.push({events: patient.events, patient});
       });
 
       return result;
-    }
+    },
   },
   mutations: {
     updatePatients(state, items: PatientWithEvents[]) {
       state.patients = items;
-    }
+    },
   },
   actions: {
     async loadEvents({commit}) {
-      const response = await Vue.$apollo.queries.allPatientEvents.refetch()
-      commit('updatePatients', response.data.allPatientEvents.items)
-    }
+      const response = await Vue.$apollo.queries.allPatientEvents.refetch();
+      commit('updatePatients', response.data.allPatientEvents.items);
+    },
   },
-  namespaced: true
+  namespaced: true,
 };
 
 export default EventLogModule;

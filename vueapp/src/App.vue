@@ -22,28 +22,28 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import AppToolbar from './components/AppToolbar.vue'
-import AppDrawer from './components/AppDrawer.vue'
-import PatientSideInfo from './components/PatientSideInfo.vue'
-import {onLogin} from './vue-apollo'
+import AppToolbar from './components/AppToolbar.vue';
+import AppDrawer from './components/AppDrawer.vue';
+import PatientSideInfo from './components/PatientSideInfo.vue';
+import {onLogin} from './vue-apollo';
 
 export default Vue.extend({
   name: 'App',
   components: {
     AppToolbar,
     AppDrawer,
-    PatientSideInfo
+    PatientSideInfo,
   },
-  data () {
+  data() {
     return {
       //
-    }
+    };
   },
   async mounted() {
     const apolloClient = this.$apollo.provider.defaultClient;
-    await onLogin(apolloClient, {})
-  }
-})
+    await onLogin(apolloClient, {});
+  },
+});
 </script>
 
 <style scoped>

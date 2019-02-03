@@ -18,8 +18,8 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import PatientCard from '@/components/PatientCard.vue'
+import Vue from 'vue';
+import PatientCard from '@/components/PatientCard.vue';
 import {mapState, mapActions, mapGetters, mapMutations} from 'vuex';
 import { LeanPatient } from '../types';
 
@@ -30,7 +30,7 @@ export default Vue.extend({
   data() {
     return {
       listPatients: this.$store.state.allPatients.patients,
-    }
+    };
   },
   computed: {
       ...mapGetters('allPatients', ['numPatients']),
@@ -45,10 +45,10 @@ export default Vue.extend({
   methods: {
     ...mapActions('allPatients', ['getAllPatients']),
     ...mapMutations('allPatients', ['updateCurrentPatient']),
-    newData(data) {console.log(data)},
+    newData(data) {console.log(data);},
     patientSelected(patient: LeanPatient) {
-      this.updateCurrentPatient(patient)
+      this.updateCurrentPatient(patient);
     }
-  }
-})
+  ,}
+});
 </script>

@@ -11,5 +11,5 @@ export interface LeanPatient {
 }
 
 export interface PatientEvent {
-  
+
 }
