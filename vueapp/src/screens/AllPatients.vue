@@ -6,13 +6,14 @@
           v-bind:name="`${patient.firstName} ${patient.lastName}`"
           :age="patient.age"
           :careGiver="patient.careGiver"
+          :events="patient.events"
           @click="patientSelected($event, patient)"/>
       </v-flex>
       <v-flex>
         {{currentPatient}}
       </v-flex>
     </v-layout>
-    <v-btn @click="getAllPatients">CLick</v-btn>
+    <!-- <v-btn @click="getAllPatients">CLick</v-btn> -->
   </div>
 </template>
 

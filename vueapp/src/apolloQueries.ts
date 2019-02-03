@@ -17,7 +17,7 @@ query allPatientEvents {
 }`;
 
 const allPatientsMed = gql`
-{
+query allPatientsMed {
     allPatientsMed: patientsList {
       items {
         firstName
@@ -37,7 +37,7 @@ const allPatientsMed = gql`
 }`;
 
 const allPatients =  gql`
-  {
+  query allPatients {
     patientsList{
       items{
         firstName
@@ -62,7 +62,7 @@ const allPatients =  gql`
 }`;
 
 const patientMedicationInformation = gql`
-  query ($patientId: ID){
+  query patientMedInfo ($patientId: ID){
     patientMedInfo: patient(id: $patientId) {
       firstName
       medicationList{
@@ -77,11 +77,28 @@ const patientMedicationInformation = gql`
     }
   }`;
 
+const mostRecentEvent = gql`
+query mostRecentEvent { 
+  mostRecentEvent: patientsList {
+    items {
+      firstName
+      lastName
+      events
+      careGiver {
+        firstName
+        lastName
+      }
+    }
+  }
+}
+`;
+
 const queries = {
   patientsList: allPatients,
   allPatientEvents: allPatientEvents,
   patientMedInfo: patientMedicationInformation,
-  allPatientsMed: allPatientsMed
+  allPatientsMed: allPatientsMed,
+  mostRecentEvent: mostRecentEvent
 };
 
 
