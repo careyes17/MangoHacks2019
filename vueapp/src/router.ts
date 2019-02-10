@@ -17,7 +17,7 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: () => import('./views/Home.vue'),
     },
     {
       path: '/about',
@@ -25,43 +25,43 @@ export default new Router({
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: () => import('./views/About.vue')
     },
     {
       path: '/patients',
       name: 'Patients',
-      component: AllPatients,
+      component: () => import('./screens/AllPatients.vue'),
     },
 
     {
       path: '/prescriptions',
       name: 'Prescriptions',
-      component: PrescriptionsVue,
+      component: () => import('./screens/PrescriptionsVue.vue'),
     },
     {
       path: '/messages',
       name: 'Messages',
-      component: MessagesVue,
+      component: () => import('./screens/MessagesVue.vue'),
     },
     {
       path: '/events',
       name: 'Event Log',
-      component: EventLogVue,
+      component: () => import('./screens/EventLogVue.vue'),
     },
     {
       path: '/integration',
       name: 'Integrations',
-      component: IntegrationsVue,
+      component: () => import('./screens/IntegrationsVue.vue'),
     },
     {
       path: '/music',
       name: 'Music',
-      component: MusicVue,
+      component: () => import('./screens/MusicVue.vue'),
     },
     {
       path: '/contact',
       name: 'Contact Information',
-      component: ContactInfoVue,
+      component: () => import('./screens/ContactInfo.vue'),
     },
   ],
 });
