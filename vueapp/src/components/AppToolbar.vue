@@ -41,7 +41,8 @@ export default Vue.extend({
   },
   async mounted() {
     await this.loadMostRecent()
-    setTimeout(() => this.loadMostRecent(),5000)
+    const mostRecentFun = this.loadMostRecent;
+    setTimeout(function() {mostRecentFun()},5000)
   }
 })
 </script>
