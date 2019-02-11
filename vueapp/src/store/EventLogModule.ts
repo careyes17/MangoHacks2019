@@ -2,6 +2,7 @@ import {Module} from 'vuex';
 import { LeanPatient, PatientEvent } from '@/types';
 import store from '@/store';
 import Vue from '@/main';
+import {apollo} from '@/main'
 
 interface PatientWithEvents extends LeanPatient {
   events: PatientEvent[];
@@ -41,12 +42,18 @@ const EventLogModule: Module<EventLogState, any> = {
   },
   actions: {
     async loadEvents({commit}) {
-      const response = await Vue.$apollo.queries.allPatientEvents.refetch();
+      const response = await apollo.queries.allPatientEvents.refetch();
       commit('updatePatients', response.data.allPatientEvents.items);
     },
     async loadMostRecent({commit}) {
-      const response = await Vue.$apollo.queries.mostRecentEvent.refetch();
-      commit('updateRecentEvent', response.data.mostRecentEvent.items[0].events.reverse()[0]);
+      let result = ''
+      try {
+        const response = await apollo.queries.mostRecentEvent.refetch();
+        result =response.data.mostRecentEvent.items[0].events.reverse()[0]
+      } catch (e) {
+        result = '';
+      }
+      commit('updateRecentEvent', result);
     },
   },
   namespaced: true,

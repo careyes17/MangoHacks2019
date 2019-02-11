@@ -27,4 +27,5 @@ Vue.use(VueTimeago, {
   },
 );
 
+export const apollo = vue.$apollo;
 export default vue;
