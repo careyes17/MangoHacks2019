@@ -48,7 +48,7 @@ export function createProvider(options = {}) {
     defaultClient: apolloClient,
     defaultOptions: {
       $query: {
-        // fetchPolicy: 'cache-and-network',
+        fetchPolicy: 'cache-and-network',
       },
     },
     errorHandler(error) {

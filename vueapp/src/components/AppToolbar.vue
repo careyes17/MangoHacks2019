@@ -6,20 +6,10 @@
     </v-toolbar-title>
     <v-spacer></v-spacer>
 
-    <ApolloQuery
-      :query="mostRecentEventQuery"
-    >
-      <template slot-scope="{ result: { loading, error, data } }">
-        <!-- Loading -->
-        <div v-if="loading" class="loading apollo">Loading...</div>
+    <div v-if="!recentEvent">Loading...</div>
 
-        <!-- Result -->
-        <div v-else-if="data" class="result apollo"><span class="mr-2">{{mostRecentEvent(data)}}</span></div>
-
-        <!-- No result -->
-        <div v-else class="no-result apollo">No result :(</div>
-      </template>
-    </ApolloQuery>
+    <!-- Result -->
+    <div v-else class="result apollo"><span class="mr-2">{{recentEvent}}</span></div>
 
     <v-btn flat>
       <v-icon>account_circle</v-icon>
@@ -29,7 +19,9 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import thisVue from '../main'
 import apolloQueries from '../apolloQueries'
+import { mapActions, mapState } from 'vuex';
 
 export default Vue.extend({
   name: 'AppToolbar',
@@ -38,10 +30,17 @@ export default Vue.extend({
       mostRecentEventQuery: apolloQueries.mostRecentEvent
     }
   },
+  computed: {
+    ...mapState('eventLogs', ['recentEvent'])
+  },
   methods: {
+    ...mapActions('eventLogs', ['loadMostRecent'],),
     mostRecentEvent(data: any) {
       return data.mostRecentEvent.items[0].events.reverse()[0]
     }
+  },
+  async mounted() {
+    await this.loadMostRecent()
   }
 })
 </script>
