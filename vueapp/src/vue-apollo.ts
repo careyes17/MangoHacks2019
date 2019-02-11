@@ -3,11 +3,10 @@ import VueApollo from 'vue-apollo';
 const { createApolloClient, restartWebsockets } = require('vue-cli-plugin-apollo/graphql-client');
 
 // Install the vue plugin
-Vue.use(VueApollo);
 
 // Name of the localStorage item
 const AUTH_TOKEN = 'apollo-token';
-const DEFAULT_TOKEN = '4f81ac0e-4052-4206-99a4-0fe6e81915f5';
+const DEFAULT_TOKEN = 'c78c56d7-f502-4a53-87b5-7db0bf73eeab';
 
 // Http endpoint
 const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'https://api.8base.com/cjrmx5lmj000001qsrnkscsp9';
@@ -33,23 +32,6 @@ const defaultOptions = {
   websocketsOnly: false,
   // Is being rendered on the server?
   ssr: false,
-
-  // Override default apollo link
-  // note: don't override httpLink here, specify httpLink options in the
-  // httpLinkOptions property of defaultOptions.
-  // link: myLink
-
-  // Override default cache
-  // cache: myCache
-
-  // Override the way the Authorization header is set
-  // getAuth: (tokenName) => ...
-
-  // Additional ApolloClient options
-  // apollo: { ... }
-
-  // Client local data (see apollo-link-state)
-  // clientState: { resolvers: { ... }, defaults: { ... } }
 };
 
 // Call this in the Vue app file
