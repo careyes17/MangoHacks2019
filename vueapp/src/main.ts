@@ -5,10 +5,13 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import VueTimeago from 'vue-timeago';
+import VueApollo from 'vue-apollo';
 import { createProvider } from './vue-apollo';
 import queries from './apolloQueries';
 
 Vue.config.productionTip = false;
+
+Vue.use(VueApollo);
 
 const vue = new Vue({
   router,
