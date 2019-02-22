@@ -1,0 +1,21 @@
+query data ($patientId: ID){
+  patient(id: $patientId) {
+    firstName
+    medicationList{
+    	items{
+      	drugName
+      	drugDosage
+      	drugFrequency
+      	drugLastAdmin
+      	drugEffectiveDuration
+    	}
+    }
+  }
+}
+
+
+
+
+{
+  "patientId":"cjrn4pbqf000001qgbahh193o"
+}

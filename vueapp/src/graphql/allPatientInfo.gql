@@ -1,0 +1,21 @@
+query allPatientInfo {
+  patient(id: "cjrn4pbqf000001qgbahh193o") {
+    firstName
+    lastName
+    age
+    careGiver {
+      firstName
+      lastName
+    }
+    events
+    medicationList{
+      items{
+        drugName
+        drugDosage
+        drugFrequency
+        drugLastAdmin
+        drugEffectiveDuration
+      }
+    }
+  }
+}

@@ -1,22 +1,38 @@
-import AppBar from '@material-ui/core/AppBar';
-import {IconButton, Toolbar} from '@material-ui/core';
-import {withStyles} from '@material-ui/styles';
 import React, {Component} from 'react';
+import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+import NavbarCollapse from 'react-bootstrap/NavbarCollapse';
 
-const styles = {};
+import Image from 'react-bootstrap/Image';
+
+import './Image.css';
+import {Link} from "react-router-dom";
 
 class TopAppBar extends Component<any, any> {
   render() {
     const { classes } = this.props;
-    return (
-      <AppBar color="primary" position="static">
-        <Toolbar>
-          <IconButton className={classes.menuButton}></IconButton>  
-        </Toolbar>
-      
-      </AppBar>
-    );
+    return <Navbar bg="light" expand="lg">
+      <Navbar.Brand><Link to="/">React-Bootstrap</Link></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <NavbarCollapse>
+        <Nav className="mr-auto">
+          <Nav.Link href="#home">Home</Nav.Link>
+          <Nav.Link href="#link">Link</Nav.Link>
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-success">Search</Button>
+        </Form>
+        <Image className="Image" src="temp.png" ></Image>
+      </NavbarCollapse>
+    </Navbar>;
   }
 }
 
-export default withStyles(styles)(TopAppBar);
+export default TopAppBar;
